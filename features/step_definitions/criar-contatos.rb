@@ -12,7 +12,7 @@ Dado("que eu tenha as informações de contato de um novo cliente") do
     }
 end
   
-Quando("passo essas informações para serviço POST de contatos") do
+Quando("passo essas informações para serviço POST") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}"
     @result = post(endpoint, @contato)
 end

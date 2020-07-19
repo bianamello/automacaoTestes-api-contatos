@@ -16,16 +16,16 @@ Dado("que eu tenha criado um contato") do
 end
 
 # --------------------excluir contato válido--------------------
-Dado("que eu queira excluir um contato já existente na base de dados") do
+Dado("que eu queira excluir um contato da base de dados") do
     @id_contato = (@result['data']['id'])
 end
 
-Quando("passo o Id do contato para o serviço DELETE de contatos") do
+Quando("passo o Id para o serviço DELETE") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}/#{@id_contato}"
     @result = delete(endpoint)
 end
 
-Então("o contato deverá ser excluído do banco de dados") do
+Então("a exclusão deverá ser realizada com sucesso") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}/#{@id_contato}"
     result = get(endpoint)
     expect(result.response.code).to eql "404"
@@ -33,7 +33,7 @@ Então("o contato deverá ser excluído do banco de dados") do
 end
 
 # --------------------excluir contato inválido--------------------
-Dado("que eu tenha um Id de contato inválido") do
+Dado("que eu tenha um Id inválido") do
     @id_contato = "acbd"
 end
 

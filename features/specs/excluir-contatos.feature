@@ -13,15 +13,15 @@ Contexto:
 @excluir_valido
 Cenário: Excluir contato válido
 
-    Dado que eu queira excluir um contato já existente na base de dados
-    Quando passo o Id do contato para o serviço DELETE de contatos
+    Dado que eu queira excluir um contato da base de dados
+    Quando passo o Id para o serviço DELETE
     Então o código de resposta HTTP deve ser igual a "204"
-    E o contato deverá ser excluído do banco de dados
+    E a exclusão deverá ser realizada com sucesso
 
 @excluir_invalido
 Cenário: Excluir contato inválido
 
-    Dado que eu tenha um Id de contato inválido
-    Quando passo o Id do contato para o serviço DELETE de contatos
+    Dado que eu tenha um Id inválido
+    Quando passo o Id para o serviço DELETE
     Então o código de resposta HTTP deve ser igual a "404"
     E devo visualizar uma mensagem de contato não encontrado

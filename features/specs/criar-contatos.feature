@@ -11,7 +11,7 @@ Funcionalidade: Criando contatos
 Cenário: Contato válido
 
     Dado que eu tenha as informações de contato de um novo cliente
-    Quando passo essas informações para serviço POST de contatos
+    Quando passo essas informações para serviço POST
     Então o código de resposta HTTP deve ser igual a "201"
     E a mensagem de resposta deverá conter o Id e o Tipo do novo contato
     E os dados exibidos deverão estar corretos
@@ -29,7 +29,7 @@ Esquema do Cenário: Contato inválido
         | address   | <address>   |
         | state     | <state>     |
         | city      | <city>      |
-    Quando passo essas informações para serviço POST de contatos
+    Quando passo essas informações para serviço POST
     Então o código de resposta HTTP deve ser igual a "422"
     E devo receber uma "<mesagem>" de resposta de contato inválido
 
