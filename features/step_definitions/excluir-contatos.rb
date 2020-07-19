@@ -13,13 +13,10 @@ Dado("que eu tenha criado um contato") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}"
     @result = post(endpoint, @contato)
     expect(@result.response.code).to eql "201"
-end
-
-# --------------------excluir contato válido--------------------
-Dado("que eu queira excluir um contato da base de dados") do
     @id_contato = (@result['data']['id'])
 end
 
+# --------------------excluir contato válido--------------------
 Quando("passo o Id para o serviço DELETE") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}/#{@id_contato}"
     @result = delete(endpoint)

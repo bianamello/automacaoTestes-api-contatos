@@ -13,7 +13,6 @@ Contexto:
 @excluir_valido
 Cenário: Excluir contato válido
 
-    Dado que eu queira excluir um contato da base de dados
     Quando passo o Id para o serviço DELETE
     Então o código de resposta HTTP deve ser igual a "204"
     E a exclusão deverá ser realizada com sucesso
