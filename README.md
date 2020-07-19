@@ -10,7 +10,7 @@ Automação de testes de API para criar, listar e deletar contatos.
 - Rspec (framework BDD para ruby)
 
 **O projeto possui as seguintes funcionalidades:**
-- [x] Cenário outline de testes para criar e listar contatos válidos;
+- [x] Cenário de testes para criar e listar contatos válidos;
 - [x] Cenário outline de testes para verificar a criação de contatos inválidos;
 - [x] Cenário de testes para excluir contatos válidos e inválidos;
 - [x] Verificação das mensagens de resposta;
