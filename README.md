@@ -17,7 +17,8 @@ Automação de testes de API para criar, listar e deletar contatos.
 - [x] Verificação do status code;
 - [x] Possui relatório dos testes em formato html - Pasta reports;
 - [x] Configurado para rodar no Jenkins;
-- [x] Configurado para gerar relatório no Jenkins.
+- [x] Configurado para gerar relatório no Jenkins;
+- [x] Cenários de testes descritos em Gherkin.
 
 
 ### Pré requisitos:
@@ -51,10 +52,10 @@ Automação de testes de API para criar, listar e deletar contatos.
 
 ### Executando os testes:
 
-- No terminal, na pasta do projeto, execute o seguinte comando que irá instalar as Gems do projeto:
+- 1- Na pasta do projeto execute o seguinte comando que irá instalar as Gems:
 	- bundle install
 
-- Para rodar todos os testes utilizando o profile de Produção, execute o seguinte comando na pasta do projeto:
+- 2- Para rodar todos os testes utilizando o profile de Produção, execute o seguinte comando na pasta do projeto:
 	- bundle exec cucumber -p prod
 
 - Para rodar cenários específicos utilize tags:
@@ -64,17 +65,17 @@ Automação de testes de API para criar, listar e deletar contatos.
 
 ### Para rodar os testes no Jenkins:
 
-**Criando JOB no Jenkins:**
+**1-Criando JOB no Jenkins:**
 - Criar um novo Job no Jenkins do tipo Pipeline;
 - Nas configurações de "Pipeline Definition" selecionar "Pipeline script from SCM" e em "SCM" selecionar o "Git";
 - Colocar a URL do projeto de testes no "Repository URL": https://github.com/bianamello/automacaoTestes-api-contatos.git
 
-**Inserindo plugin Cucumber reports no Jenkins (O projeto está configurado no Jenkinsfile para gerar o relatório no Jenkins):**
+**2-Inserindo plugin Cucumber reports no Jenkins (O projeto está configurado no Jenkinsfile para gerar o relatório no Jenkins):**
 - Clicar em Gerenciar Jenkins/ Gerenciar plugins
 - Clicar em Disponíveis e filtrar por "cucumber reports"
 - Selecionar e Baixar
 - Após baixar, selecionar a opção para reiniciar o Jenkins
 
-**Para rodar os testes no pipeline do Jenkins:**
+**3-Para rodar os testes no pipeline do Jenkins:**
 - Clicar no Job criado
 - Clicar em "Construir agora"
