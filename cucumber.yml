@@ -1,0 +1,8 @@
+---
+report_html: --format html --out=reports/report_test.html
+report_json: --format=json --out=reports/report_test.json
+
+prod: --no-source --color --format pretty -p report_html ENV_TYPE=prod
+ci: --format progress -p report_json ENV_TYPE=prod
+
+default: -p prod

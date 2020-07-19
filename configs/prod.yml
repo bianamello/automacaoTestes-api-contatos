@@ -1,0 +1,4 @@
+---
+apis:
+    base_url: 'https://api-de-tarefas.herokuapp.com'
+    contacts: '/contacts'
