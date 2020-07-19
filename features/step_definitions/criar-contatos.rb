@@ -1,6 +1,6 @@
 # --------------------criar contato válido--------------------
-Dado("que eu tenha as informações de um novo cliente") do
-    @cliente = {
+Dado("que eu tenha as informações de contato de um novo cliente") do
+    @contato = {
         "name": Faker::Name.first_name,
         "last_name": Faker::Name.last_name,
         "email": Faker::Internet.email,
@@ -14,7 +14,7 @@ end
   
 Quando("passo essas informações para serviço POST de contatos") do
     endpoint = "#{CONFIG['apis']['base_url']}#{CONFIG['apis']['contacts']}"
-    @result = post(endpoint, @cliente)
+    @result = post(endpoint, @contato)
 end
   
 Então("o código de resposta HTTP deve ser igual a {string}") do |status_code|
@@ -27,14 +27,14 @@ Então("a mensagem de resposta deverá conter o Id e o Tipo do novo contato") do
 end
 
 Então("os dados exibidos deverão estar corretos") do
-    expect(@result['data']['attributes']['name']).to eql @cliente[:name]
-    expect(@result['data']['attributes']['last-name']).to eql @cliente[:last_name]
-    expect(@result['data']['attributes']['email']).to eql @cliente[:email]
-    expect(@result['data']['attributes']['age']).to eql @cliente[:age]
-    expect(@result['data']['attributes']['phone']).to eql @cliente[:phone]
-    expect(@result['data']['attributes']['address']).to eql @cliente[:address]
-    expect(@result['data']['attributes']['state']).to eql @cliente[:state]
-    expect(@result['data']['attributes']['city']).to eql @cliente[:city]
+    expect(@result['data']['attributes']['name']).to eql @contato[:name]
+    expect(@result['data']['attributes']['last-name']).to eql @contato[:last_name]
+    expect(@result['data']['attributes']['email']).to eql @contato[:email]
+    expect(@result['data']['attributes']['age']).to eql @contato[:age]
+    expect(@result['data']['attributes']['phone']).to eql @contato[:phone]
+    expect(@result['data']['attributes']['address']).to eql @contato[:address]
+    expect(@result['data']['attributes']['state']).to eql @contato[:state]
+    expect(@result['data']['attributes']['city']).to eql @contato[:city]
 end
 
 Então("o contato deverá ser salvo no banco de dados") do
@@ -44,8 +44,8 @@ Então("o contato deverá ser salvo no banco de dados") do
 end
 
 # --------------------contato inválido--------------------
-Dado("que eu tenha informações inválidas de novos clientes:") do |table|
-    @cliente = table.rows_hash
+Dado("que eu tenha informações inválidas de contato:") do |table|
+    @contato = table.rows_hash
 end
 
 Então("devo receber uma {string} de resposta de contato inválido") do |mesagem|

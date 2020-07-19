@@ -9,7 +9,7 @@ Funcionalidade: Criando contatos
 @criar
 Cenário: Contato válido
 
-    Dado que eu tenha as informações de um novo cliente
+    Dado que eu tenha as informações de contato de um novo cliente
     Quando passo essas informações para serviço POST de contatos
     Então o código de resposta HTTP deve ser igual a "201"
     E a mensagem de resposta deverá conter o Id e o Tipo do novo contato
@@ -19,7 +19,7 @@ Cenário: Contato válido
 @criar
 Esquema do Cenário: Contato inválido
 
-    Dado que eu tenha informações inválidas de novos clientes:
+    Dado que eu tenha informações inválidas de contato:
         | name      | <name>      |
         | last_name | <last_name> |
         | email     | <email>     |
