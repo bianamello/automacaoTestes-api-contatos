@@ -10,12 +10,14 @@ Automação de testes de API para criar, listar e deletar contatos.
 - Rspec (framework BDD para ruby)
 
 **O projeto possui as seguintes funcionalidades:**
-- [x] Cenário outline de testes para criar  e listar contatos;
-- [x] Cenário de testes para excluir contatos;
-- [x] Verificação das mensagens de resposta e status code.
-- [x] Possui relatório dos testes em formato html - Pasta reports
-- [x] Configurado para rodar no Jenkins
-- [x] Configurado para gerar relatório no Jenkins
+- [x] Cenário outline de testes para criar e listar contatos válidos;
+- [x] Cenário outline de testes para verificar a criação de contatos inválidos;
+- [x] Cenário de testes para excluir contatos válidos e inválidos;
+- [x] Verificação das mensagens de resposta;
+- [x] Verificação do status code;
+- [x] Possui relatório dos testes em formato html - Pasta reports;
+- [x] Configurado para rodar no Jenkins;
+- [x] Configurado para gerar relatório no Jenkins.
 
 
 ### Pré requisitos:
@@ -44,7 +46,7 @@ Automação de testes de API para criar, listar e deletar contatos.
 	- gem install bundler
 
 *Guia de instalação do Ruby + Devkit + Bundler no Windows:*
-	- https://medium.com/qaninja/instalando-ruby-cucumber-e-capybara-no-windows-10-acb1fe833a95
+- [Guia] - https://medium.com/qaninja/instalando-ruby-cucumber-e-capybara-no-windows-10-acb1fe833a95
 
 
 ### Executando os testes:
