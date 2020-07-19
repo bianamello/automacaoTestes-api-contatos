@@ -9,3 +9,7 @@ end
 def get(endpoint)
 	HTTParty.get(endpoint)
 end
+
+def delete(endpoint)
+    HTTParty.delete(endpoint)
+end
