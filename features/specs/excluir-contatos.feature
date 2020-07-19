@@ -1,5 +1,6 @@
 #language: pt
 
+@excluir
 Funcionalidade: Excluindo contatos
 
     Como aplicação backend de Gerenciamento de Contatos
@@ -9,7 +10,7 @@ Funcionalidade: Excluindo contatos
 Contexto:
     Dado que eu tenha criado um contato
 
-@excluir
+@excluir_valido
 Cenário: Excluir contato válido
 
     Dado que eu queira excluir um contato já existente na base de dados
@@ -17,7 +18,7 @@ Cenário: Excluir contato válido
     Então o código de resposta HTTP deve ser igual a "204"
     E o contato deverá ser excluído do banco de dados
 
-@excluir
+@excluir_invalido
 Cenário: Excluir contato inválido
 
     Dado que eu tenha um Id de contato inválido

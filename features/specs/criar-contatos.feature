@@ -1,12 +1,13 @@
 #language: pt
 
+@criar
 Funcionalidade: Criando contatos
 
     Como aplicação backend de Gerenciamento de Contatos
     Quero implementar o fluxo de salvar contatos de novos clientes
     Para gravá-los no nosso banco de dados
 
-@criar
+@criar_valido
 Cenário: Contato válido
 
     Dado que eu tenha as informações de contato de um novo cliente
@@ -16,7 +17,7 @@ Cenário: Contato válido
     E os dados exibidos deverão estar corretos
     E o contato deverá ser salvo no banco de dados
 
-@criar
+@criar_invalido
 Esquema do Cenário: Contato inválido
 
     Dado que eu tenha informações inválidas de contato:
